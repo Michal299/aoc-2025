@@ -1,8 +1,8 @@
 package main
 
 import (
-	"aoc-2026/day01"
-	"aoc-2026/utils"
+	"aoc-2025/day01"
+	"aoc-2025/utils"
 )
 
 func main() {
