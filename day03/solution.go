@@ -15,8 +15,7 @@ func Part1(lines []string) int {
 
 func Part2(lines []string) int {
 	totalJoltage := 0
-	for i, line := range lines {
-		fmt.Printf("Processing line %d\n", i)
+	for _, line := range lines {
 		batteries := []byte(line)
 		batteriesInt := make([]int, len(batteries))
 		for i, b := range batteries {

@@ -1,6 +1,7 @@
 package day02
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -11,8 +12,12 @@ type IdRange struct {
 }
 
 func Part1(line string) int {
+	totalSumOfInvalidIds := 0
 	ranges := parseInput(line)
-	return len(ranges)
+	for _, r := range ranges {
+		totalSumOfInvalidIds += sumInvalidIds(r)
+	}
+	return totalSumOfInvalidIds
 }
 
 func Part2(line string) int {
@@ -34,4 +39,26 @@ func parseRange(rangeString string) IdRange {
 	last, _ := strconv.Atoi(ids[1])
 	idRange := IdRange{firstId: first, lastId: last}
 	return idRange
+}
+
+func sumInvalidIds(iRange IdRange) int {
+	sum := 0
+
+	startString := fmt.Sprint(iRange.firstId)
+	l := len(startString)
+	patternLen := l/2
+	pattern := startString[:patternLen]
+	valueStr := pattern + pattern
+	value, _ := strconv.Atoi(valueStr)
+	
+	for value <= iRange.lastId {
+		if value >= iRange.firstId && value <= iRange.lastId {
+			sum  += value
+		}
+		patternValue, _ := strconv.Atoi(pattern)
+		pattern = fmt.Sprint(patternValue + 1)
+		valueStr = pattern + pattern
+		value, _ = strconv.Atoi(valueStr)
+	}
+	return sum
 }
