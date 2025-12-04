@@ -5,7 +5,7 @@ import (
 )
 
 func TestPart1(t *testing.T) {
-	t.Run("Day XY example", func(t *testing.T) {
+	t.Run("Part1 example", func(t *testing.T) {
 		input := []string{}
 		expected := -1
 		got := Part1(input)
@@ -16,7 +16,7 @@ func TestPart1(t *testing.T) {
 }
 
 func TestPart2(t *testing.T) {
-	t.Run("Day XY example", func(t *testing.T) {
+	t.Run("Part2 example", func(t *testing.T) {
 		input := []string{}
 		expected := -1
 		got := Part2(input)
