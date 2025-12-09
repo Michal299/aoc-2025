@@ -6,6 +6,7 @@ import (
 	"aoc-2025/day03"
 	"aoc-2025/day04"
 	"aoc-2025/day05"
+	"aoc-2025/day06"
 	"aoc-2025/utils"
 )
 
@@ -25,4 +26,7 @@ func main() {
 
 	dayFiveInput := utils.ReadInput("./input/day05/part1.txt")
 	utils.PrintDay(5, day05.Part1(dayFiveInput), day05.Part2(dayFiveInput))
+
+	daySixInput := utils.ReadInput("./input/day06/part1.txt")
+	utils.PrintDay(6, day06.Part1(daySixInput), day06.Part2(daySixInput))
 }
